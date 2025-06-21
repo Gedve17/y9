@@ -1,13 +1,13 @@
 import random
 
-def labas():
-    print("Welcome to the Gedvydas Kleberis Calculator")
+def pasirinkimas():
     print("--------------------------------------------")
-    name = input("Koks tavo vardas? ")
+    g=input("[1] - Skaiciuotuvas, [2] - Zaidimukas ")
     print("--------------------------------------------")
-    print("Sveikas atvykes,",name.upper(),"bedarbi tu")
-    print("--------------------------------------------")
-labas()
+    if g=="1":
+        calculator()
+    elif g=="2":
+        zaidimas()
 
 def calculator():
     while True:
@@ -26,8 +26,7 @@ def calculator():
         print("--------------------------------------------")
         again =input("Nori skaiciuoti daugiau? ")
         if again.lower()!="taip":
-            break
-calculator()
+            pasirinkimas()
 
 def zaidimas():
     score=0
@@ -61,5 +60,14 @@ def zaidimas():
         print("Tavo taskai: ",score)
         again =input("Nori zaisti daugiau? ")
         if again.lower()!="taip":
-            break
-zaidimas()
+            pasirinkimas()
+
+def labas():
+    print("Welcome to the Gedvydas Kleberis Programa")
+    print("--------------------------------------------")
+    name = input("Koks tavo vardas? ")
+    print("--------------------------------------------")
+    print("Sveikas atvykes,",name.upper(),"bedarbi tu")
+
+labas()
+pasirinkimas()
